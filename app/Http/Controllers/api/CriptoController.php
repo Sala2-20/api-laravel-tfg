@@ -44,8 +44,12 @@ class CriptoController extends MiController
             if ($request->has('moneda')) {
                 $moneda = $request->moneda;
             }
+            $pagina = 1;
+            if ($request->has('pagina')) {
+                $pagina = $request->pagina;
+            }
 
-            $url = CriptoController::$url . '/market?vs_currency=' . $moneda . '&per_page=15&page=1';
+            $url = CriptoController::$url . '/markets?vs_currency=' . $moneda . '&per_page=15&page=' . $pagina;
 
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
