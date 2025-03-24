@@ -17,13 +17,13 @@ return [
 
     'paths' => ['api/*', 'sanctum/csrf-cookie'],
 
-    'allowed_methods' => ['*'],
+    'allowed_methods' => ['GET'],  // Permite todos los métodos HTTP
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => ['http://localhost:3000'],  // Permite todos los orígenes
 
     'allowed_origins_patterns' => [],
 
-    'allowed_headers' => ['*'],
+    'allowed_headers' => ['Content-Type'],  // Permite todos los encabezados
 
     'exposed_headers' => [],
 
@@ -31,4 +31,5 @@ return [
 
     'supports_credentials' => false,
 
+    'hosts' => [],
 ];
